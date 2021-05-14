@@ -1,0 +1,26 @@
+name = "<shouldbehidden?>"
+type = "javascript"
+account_id = "<shouldbehidden?>"
+
+# workers_dev = true
+
+# The entry directory for the package.json relative to this wrangler.toml file
+# that contains main field for the file name of the compiled worker file in "main" field.
+entry-point = ".."
+
+[build]
+upload.format = "service-worker"
+command = "npm run build"
+
+[site]
+# The location of the built site files.
+bucket = "./dist"
+
+[env.development]
+
+[env.production]
+zone_id = "<shouldbehidden?>"
+routes = [
+  "https://ilmo.app/*",
+  "https://www.ilmo.app/*"
+]
