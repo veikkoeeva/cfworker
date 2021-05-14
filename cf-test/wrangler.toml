@@ -15,6 +15,7 @@ command = "npm run build"
 [site]
 # The location of the built site files.
 bucket = "./dist"
+entry-point = "worker-site"
 
 [env.development]
 
