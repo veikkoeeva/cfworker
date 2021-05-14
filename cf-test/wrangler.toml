@@ -1,26 +1,24 @@
-type = "javascript"
-name = "cf-test"
+type = "webpack"
+name = "aged-cherry-3ac2"
 account_id = "0a656e987875b4c498b85fa6f0072f73"
 zone_id = "801a5cea2fa081f650c4df3e46de5f02"
 
 # workers_dev = true
 
 [build]
-command = ""
-upload.format = "modules"
+command = "npm install && npm run build"
+
+[build.upload]
+format = "modules"
 main = "./cf-worker/index.js"
 
 [site]
 # The location of the application files to be deployed.
 bucket = "./dist"
-
-# The location of the Clouflare Worker to be deployed.
-entry-point = "cf-worker"
-
-[env.development]
+entry-point = "workers-site"
 
 [env.production]
-
+workers_dev = true
 routes = [
   "https://ilmo.app/*",
   "https://www.ilmo.app/*"
