@@ -1,26 +1,26 @@
-name = "<shouldbehidden?>"
 type = "javascript"
-account_id = "<shouldbehidden?>"
+name = "cf-test"
+account_id = "0a656e987875b4c498b85fa6f0072f73"
+zone_id = "801a5cea2fa081f650c4df3e46de5f02"
 
 # workers_dev = true
 
-# The entry directory for the package.json relative to this wrangler.toml file
-# that contains main field for the file name of the compiled worker file in "main" field.
-entry-point = ".."
-
 [build]
-upload.format = "service-worker"
-command = "npm run build"
+command = ""
+upload.format = "modules"
+main = "./cf-worker/index.js"
 
 [site]
-# The location of the built site files.
+# The location of the application files to be deployed.
 bucket = "./dist"
-entry-point = "worker-site"
+
+# The location of the Clouflare Worker to be deployed.
+entry-point = "cf-worker"
 
 [env.development]
 
 [env.production]
-zone_id = "<shouldbehidden?>"
+
 routes = [
   "https://ilmo.app/*",
   "https://www.ilmo.app/*"

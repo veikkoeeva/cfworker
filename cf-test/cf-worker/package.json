@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "worker",
+  "version": "1.0.0",
+  "description": "Cloudflare worker",
+  "main": "index.js",
+  "author": "Veikko Eeva",
+  "license": "MIT",
+  "dependencies": {
+    "@cloudflare/kv-asset-handler": "0.1.1"
+  }
+}
